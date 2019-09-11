@@ -17,4 +17,15 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <SurfaceView
+        android:layout_width="411dp"
+        android:layout_height="628dp"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="43dp" />
+    <
+    <Spinner
+        android:id="@+id/colors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
 </androidx.constraintlayout.widget.ConstraintLayout>
