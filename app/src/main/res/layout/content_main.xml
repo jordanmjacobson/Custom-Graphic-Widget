@@ -26,15 +26,6 @@
             android:id = "@+id/adjust"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
-        <DrawView
-
-            />
-        />
-    <
-    <Spinner
-        android:id="@+id/colors"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            
 
 </androidx.constraintlayout.widget.ConstraintLayout>

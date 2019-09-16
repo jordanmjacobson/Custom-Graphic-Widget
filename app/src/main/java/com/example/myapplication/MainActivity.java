@@ -14,6 +14,8 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
     private Seekbar adjust = null;
+    private CustomGraph graph = null;
+
 
 
     @Override

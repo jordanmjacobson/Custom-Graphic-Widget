@@ -14,7 +14,7 @@ public class CustomGraph extends SurfaceView implements SurfaceHolder.Callback {
     public CustomGraph(Context context) {
         super(context);
         paint = new Paint();
-        paint.setColor(Color.RED);
+        paint.setColor(Color.BLUE);
     }
     @Override
     public void surfaceCreated(SurfaceHolder surfaceHolder) {
@@ -46,8 +46,8 @@ public class CustomGraph extends SurfaceView implements SurfaceHolder.Callback {
         canvas.drawRect(0, 0, this.getWidth(), this.getHeight(), surfaceBackground);
 
         // Draw the circle.
-        paint.setColor(Color.RED);
-        canvas.drawCircle(x, y, 100, paint);
+        paint.setColor(Color.BLUE);
+        canvas.drawLine(0,0, x, y, paint);
 
         // Unlock the canvas object and post the new draw.
         surfaceHolder.unlockCanvasAndPost(canvas);
