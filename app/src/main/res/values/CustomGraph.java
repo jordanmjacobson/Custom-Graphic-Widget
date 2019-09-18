@@ -9,7 +9,7 @@ import android.view.SurfaceView;
 public class CustomGraph extends SurfaceView implements SurfaceHolder.Callback {
     public SurfaceHolder surfaceHolder = null;
     private Paint paint = null;
-    private float x, y;
+    private float x, y, m, b;
 
     public CustomGraph(Context context) {
         super(context);
@@ -45,20 +45,22 @@ public class CustomGraph extends SurfaceView implements SurfaceHolder.Callback {
         // Draw the surfaceview background color.
         canvas.drawRect(0, 0, this.getWidth(), this.getHeight(), surfaceBackground);
 
-        // Draw the circle.
+        // Draw the line.
         paint.setColor(Color.BLUE);
-        canvas.drawLine(0,0, x, y, paint);
+        int y0 = m*0 + b; // Initial Y location, for X = 0
+        int y1 = m*this.getWidth() + b; // for X = width
+        canvas.drawLine(0,y0, this.getWidth(), y1, paint);
 
         // Unlock the canvas object and post the new draw.
         surfaceHolder.unlockCanvasAndPost(canvas);
     }
 
-
-    public void setX(float x) {
-        this.x = (float) (0.01 * x * this.getWidth());
+// Modify these to setM and setB, rather than X and Y
+    public void setM(float m) {
+        this.m = (float) (0.01 * m);
     }
-    public void setY(float y) {
-        this.y = (float) (0.01 * y * this.getHeight());
+    public void setB(float b) {
+        this.b = (float) (0.01 * b);
     }
 
 }
