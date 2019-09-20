@@ -11,9 +11,12 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SurfaceView;
+import android.widget.SeekBar;
 
 public class MainActivity extends AppCompatActivity {
-    private Seekbar adjust = null;
+    private SeekBar adjustM = null;
+    private SeekBar adjustB = null;
     private CustomGraph graph = null;
 
 
@@ -24,6 +27,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        SurfaceView surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
+        surfaceView.add
+        adjustM = (SeekBar) findViewById(R.id.adjustM);
+        adjustB = (SeekBar) findViewById(R.id.adjustB);
+
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
