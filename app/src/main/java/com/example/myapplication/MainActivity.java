@@ -11,8 +11,10 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.SurfaceView;
+//import android.view.SurfaceView;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
+import android.widget.SeekBar.OnSeekBarChangeListener;
 
 public class MainActivity extends AppCompatActivity {
     private SeekBar adjustM = null;
@@ -27,21 +29,36 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        SurfaceView surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
-        surfaceView.add
+        //SurfaceView surfaceView = (SurfaceView) findViewById(R.id.surfaceView);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.customViewLayout);
         adjustM = (SeekBar) findViewById(R.id.adjustM);
         adjustB = (SeekBar) findViewById(R.id.adjustB);
 
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+        /*FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
+        });*/
+        adjustM.setOnSeekBarChangeListener(new onSeekBarChangeListener (){
+            @Override
+            public void onStopTrackingTouch(SeekBar adjustM){
+                //default method
+            }
+            @Override
+            public void onStartTrackingTouch(SeekBar adjustM){
+                //default method
+            }
+            @Override
+            public void onProgressChanged(SeekBar adjustM, int progress, boolean fromUser){
+                graph.setM(progress);
+                graph.draw();
+            }
         });
-    }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
