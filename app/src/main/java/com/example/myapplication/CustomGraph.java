@@ -47,8 +47,8 @@ public class CustomGraph extends SurfaceView implements SurfaceHolder.Callback {
 
         // Draw the line.
         paint.setColor(Color.BLUE);
-        int y0 = m*0 + b; // Initial Y location, for X = 0
-        int y1 = m*this.getWidth() + b; // for X = width
+        float y0 =  m*0 + b; // Initial Y location, for X = 0
+        float y1 =  m*this.getWidth() + b; // for X = width
         canvas.drawLine(0,y0, this.getWidth(), y1, paint);
 
         // Unlock the canvas object and post the new draw.

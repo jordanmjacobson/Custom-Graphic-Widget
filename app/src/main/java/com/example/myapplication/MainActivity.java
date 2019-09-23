@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });*/
+        @Override
         adjustM.setOnSeekBarChangeListener(new onSeekBarChangeListener (){
             @Override
             public void onStopTrackingTouch(SeekBar adjustM){
@@ -57,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                 graph.setM(progress);
                 graph.draw();
             }
-        });
+        };);
     };
 
     @Override
